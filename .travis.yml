@@ -2,7 +2,7 @@ language: csharp
 solution: ./assignment6/assignment6.sln
 sudo: required
 install:
-  - nuget ./assignment6/assignment6.sln
+  - nuget restore ./assignment6/assignment6.sln
   - nuget install NUnit.Console -Version 3.9.0 -OutputDirectory testrunner
 script:
   - msbuild /p:Configuration=Release ./assignment6/assignment6.sln
