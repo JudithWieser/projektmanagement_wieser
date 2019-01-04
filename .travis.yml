@@ -1,5 +1,5 @@
 language: csharp
-solution: assignment6/assignment6.sln
+solution: ./assignment6/assignment6.sln
 sudo: required
 install:
   - nuget assignment6/assignment6.sln
