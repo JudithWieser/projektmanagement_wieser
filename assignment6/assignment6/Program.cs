@@ -11,6 +11,7 @@ namespace assignment6
         static void Main(string[] args)
         {
             Console.WriteLine("Hello world!");
+            Console.WriteLine("Let's try ci with travis and let it fail")
         }
     }
 }
