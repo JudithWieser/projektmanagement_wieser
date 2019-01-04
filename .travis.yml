@@ -2,8 +2,8 @@ language: csharp
 solution: ./assignment6/assignment6.sln
 sudo: required
 install:
-  - nuget assignment6/assignment6.sln
+  - nuget ./assignment6/assignment6.sln
   - nuget install NUnit.Console -Version 3.9.0 -OutputDirectory testrunner
 script:
-  - msbuild /p:Configuration=Release assignment6/assignment6.sln
+  - msbuild /p:Configuration=Release ./assignment6/assignment6.sln
   - mono ./testrunner/NUnit.Runners.3.9.0/tools/nunit-console3.exe ./MyProject.Tests/bin/Release/MyProject.Tests.dll
