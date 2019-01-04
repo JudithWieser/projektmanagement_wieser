@@ -1,10 +1,9 @@
 language: csharp
 solution: assignment6/assignment6.sln
 sudo: required
-before_install:
-  - wget --no-check-certificate https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 install:
-  - mono ./nuget.exe install NUnit.Runners -Version 3.0.1 -OutputDirectory testrunner
-- travis_retry nuget restore -source "https://www.nuget.org/api/v2" assignment6/assignment6.sln
+  - nuget assignment6/assignment6.sln
+  - nuget install NUnit.Console -Version 3.9.0 -OutputDirectory testrunner
 script:
-- make compile testno assignment6/packages/xunit.runner.console*/tools/xunit.console.exe assignment6/assignment6.Tests/bin/Debug/Fibonacci.Tests.dll
+  - msbuild /p:Configuration=Release assignment6/assignment6.sln
+  - mono ./testrunner/NUnit.Runners.3.9.0/tools/nunit-console3.exe ./MyProject.Tests/bin/Release/MyProject.Tests.dll
